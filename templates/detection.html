@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detection Page</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <script>
+      function startDetection() {
+        fetch("/start_detection", { method: "POST" })
+          .then((response) => response.json())
+          .then((data) => alert(data.status));
+      }
+
+      function stopDetection() {
+        fetch("/stop_detection", { method: "POST" })
+          .then((response) => response.json())
+          .then((data) => {
+            alert(data.status);
+            document.getElementById("maleCount").innerText = data.male;
+            document.getElementById("femaleCount").innerText = data.female;
+            document.getElementById("totalCount").innerText = data.total; // Update total count
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <div class="detection-container">
+      <h1>Detection Page</h1>
+      <p>Last Count:</p>
+      <p>Male: <span id="maleCount">{{ male_count }}</span></p>
+      <p>Female: <span id="femaleCount">{{ female_count }}</span></p>
+      <p>
+        <strong>Total: <span id="totalCount">{{ total_count }}</span></strong>
+      </p>
+      <!-- Added total count -->
+
+      <button class="detection-btn" onclick="startDetection()">
+        Start Detection
+      </button>
+      <button class="detection-btn" onclick="stopDetection()">
+        Stop Detection
+      </button>
+      <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+    </div>
+  </body>
+</html>

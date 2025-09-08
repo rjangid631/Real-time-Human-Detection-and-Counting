@@ -1,0 +1,97 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #ffffff;
+}
+
+/* Containers */
+.login-container, .detection-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(20px);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    transition: all 0.3s ease-in-out;
+}
+
+h2, h1 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+/* Input Fields */
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.input-field::placeholder {
+    color: #e0e0e0;
+}
+
+/* Focus Effect */
+.input-field:focus {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Buttons */
+.btn, .detection-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover, .detection-btn:hover {
+    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    transform: scale(1.05);
+}
+
+/* Detection Page */
+.detection-container p {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+/* Logout Link */
+.logout {
+    display: block;
+    margin-top: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.logout:hover {
+    color: #ffcccc;
+}
